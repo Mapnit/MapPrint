@@ -1,0 +1,68 @@
+<div>
+	<table class="${baseClass}OptionSection">
+		<tr>
+			<td>
+				<div class="${baseClass}Title">Title: </div>
+			</td>
+			<td>
+				<input type="text" class="${baseClass}TitleInput}" data-dojo-attach-point="_titleInput" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class="${baseClass}Size">Size: </span>
+			</td>
+			<td>
+				<div class="${baseClass}SizeOptionList" 
+					data-dojo-type="dijit/form/ComboBox" 
+					data-dojo-props="searchAttr:'name',required:true"
+					data-dojo-attach-point="_sizeComboBox"
+					>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class="${baseClass}Orientation">Orientation: </span>
+			</td>
+			<td>
+				<div class="${baseClass}OrientationOptionList" 
+					data-dojo-type="dijit/form/ComboBox" 
+					data-dojo-props="searchAttr:'name',required:true"
+					data-dojo-attach-point="_orientationComboBox"
+					>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class="${baseClass}Format">Format: </span>
+			</td>
+			<td>
+				<div class="${baseClass}FormatOptionList" 
+					data-dojo-type="dijit/form/ComboBox" 
+					data-dojo-props="searchAttr:'name',required:true"
+					data-dojo-attach-point="_formatComboBox"
+					>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class="${baseClass}Dpi">DPI: </span>
+			</td>
+			<td>
+				<div class="${baseClass}DpiOptionList" 
+					data-dojo-type="dijit/form/ComboBox" 
+					data-dojo-props="searchAttr:'name',required:true"
+					data-dojo-attach-point="_dpiComboBox"
+					>
+				</div>
+			</td>
+		</tr>		
+	</table>
+	<input type="button" class="${baseClass}Print" value="Print" 
+		data-dojo-attach-event="onclick:_doPrint" />
+		
+	<span data-dojo-attach-point="_status" class="${baseClass}StatusMessage"></span>
+</div>

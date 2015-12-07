@@ -1,0 +1,8 @@
+.MapPrintStatusMessage {
+	position: absolute;
+	right: 5px;
+    top: 45px;
+    color: yellow;
+    background-color: red;
+    font-weight:bold;
+}
