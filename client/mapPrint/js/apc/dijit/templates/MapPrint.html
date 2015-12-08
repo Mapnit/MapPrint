@@ -1,6 +1,11 @@
 <div>
 	<table class="${baseClass}OptionSection">
 		<tr>
+			<th colspan="2">
+				Map Print 
+			</th>
+		</tr>
+		<tr>
 			<td>
 				<div class="${baseClass}Title">Title: </div>
 			</td>
@@ -14,8 +19,9 @@
 			</td>
 			<td>
 				<div class="${baseClass}SizeOptionList" 
-					data-dojo-type="dijit/form/ComboBox" 
+					data-dojo-type="dijit/form/FilteringSelect" 
 					data-dojo-props="searchAttr:'name',required:true"
+					data-dojo-attach-event="onChange:_sizeChanged"
 					data-dojo-attach-point="_sizeComboBox"
 					>
 				</div>
@@ -27,7 +33,7 @@
 			</td>
 			<td>
 				<div class="${baseClass}OrientationOptionList" 
-					data-dojo-type="dijit/form/ComboBox" 
+					data-dojo-type="dijit/form/FilteringSelect" 
 					data-dojo-props="searchAttr:'name',required:true"
 					data-dojo-attach-point="_orientationComboBox"
 					>
@@ -40,7 +46,7 @@
 			</td>
 			<td>
 				<div class="${baseClass}FormatOptionList" 
-					data-dojo-type="dijit/form/ComboBox" 
+					data-dojo-type="dijit/form/FilteringSelect" 
 					data-dojo-props="searchAttr:'name',required:true"
 					data-dojo-attach-point="_formatComboBox"
 					>
@@ -53,7 +59,7 @@
 			</td>
 			<td>
 				<div class="${baseClass}DpiOptionList" 
-					data-dojo-type="dijit/form/ComboBox" 
+					data-dojo-type="dijit/form/FilteringSelect" 
 					data-dojo-props="searchAttr:'name',required:true"
 					data-dojo-attach-point="_dpiComboBox"
 					>

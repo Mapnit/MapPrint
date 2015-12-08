@@ -17,7 +17,7 @@ define([
     "dojo/ready",
 	
 	"dojo/store/Memory",
-	"dijit/form/ComboBox", 
+	"dijit/form/FilteringSelect", 
 
     "dojo/text!./templates/MapPrint.html", // template html
 	
@@ -27,7 +27,7 @@ define([
     topic, Evented, declare, lang, array, 
     parser, _TemplatedMixin, _WidgetsInTemplateMixin,
     on, dom, domConstruct, domClass, domStyle, ready, 
-	Memory, ComboBox,  
+	Memory, FilteringSelect,  
     dijitTemplate
 ) {
 
@@ -126,11 +126,6 @@ define([
 					items: this.sizeOptions
 				}
 			})); 
-			if (this.sizeOptions && this.sizeOptions[0]) {
-				firstOption = this.sizeOptions[0];
-				this._sizeComboBox.set("value", firstOption["value"]); 
-				this._sizeComboBox.set("displayedValue", firstOption["name"]); 
-			}
 			// - orientation
 			this._orientationComboBox.set("store", new Memory({
 				data: {
@@ -139,11 +134,6 @@ define([
 					items: this.orientationOptions
 				}
 			})); 
-			if (this.orientationOptions && this.orientationOptions[0]) {
-				firstOption = this.orientationOptions[0];
-				this._orientationComboBox.set("value", firstOption["value"]); 
-				this._orientationComboBox.set("displayedValue", firstOption["name"]); 
-			}
 			// - format
 			this._formatComboBox.set("store", new Memory({
 				data: {
@@ -152,11 +142,6 @@ define([
 					items: this.formatOptions
 				}
 			})); 
-			if (this.formatOptions && this.formatOptions[0]) {
-				firstOption = this.formatOptions[0];
-				this._formatComboBox.set("value", firstOption["value"]); 
-				this._formatComboBox.set("displayedValue", firstOption["name"]); 
-			}
 			// - DPI
 			this._dpiComboBox.set("store", new Memory({
 				data: {
@@ -165,11 +150,6 @@ define([
 					items: this.dpiOptions
 				}
 			})); 
-			if (this.dpiOptions && this.dpiOptions[0]) {
-				firstOption = this.dpiOptions[0];
-				this._dpiComboBox.set("value", firstOption["value"]); 
-				this._dpiComboBox.set("displayedValue", firstOption["name"]); 
-			}
 			//
             this._visible();
             this.set("loaded", true);
@@ -193,7 +173,23 @@ define([
         }, 
 		
 		_doPrint: function() {
-			console.log("Request printout ");
+			console.log("Gather the input");
+			// - size
+			var selectedSize = this._sizeComboBox.value; 
+			console.log("size = " + selectedSize);
+			// - orientation
+			var selectedOrientation = this._orientationComboBox.value; 
+			console.log("orientation = " + selectedOrientation);
+			// - format
+			var selectedFormat = this._formatComboBox.value; 
+			console.log("format = " + selectedFormat);
+			// - dpi
+			var selectedDpi = this._dpiComboBox.value; 
+			console.log("DPI = " + selectedDpi);
+			// - title 
+			var titleInput = this._titleInput.value; 
+			console.log("title = " + titleInput);
+			
 		}, 
 		
 		_printFailed: function(err){
