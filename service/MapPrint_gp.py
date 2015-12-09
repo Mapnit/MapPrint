@@ -68,6 +68,8 @@ else:
 outFileUrl = exportUrlRoot + outFileName
 arcpy.SetParameterAsText(6, outFileUrl)
 
+arcpy.AddMessage("Print Completed")
+
 # Clean up - delete the map document reference
 tmplMapDoc_filePath = tmplMapDoc.filePath
 del tmplMapDoc, result
