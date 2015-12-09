@@ -16,7 +16,9 @@ templateFolder = g_ESRI_variable_1
 #exportFolder = g_ESRI_variable_2
 
 # Input for Map Print
+## Web_Map_as_JSON is the variable used by the PrintTask so it needs to be exact
 Web_Map_as_JSON = arcpy.GetParameterAsText(0)
+## Other params are additional so they needs to match the input params in the tool properties
 title = arcpy.GetParameterAsText(1)
 size = arcpy.GetParameterAsText(2)
 orientation = arcpy.GetParameterAsText(3)
@@ -76,6 +78,8 @@ else:
 	sys.exit()
 
 # Set the output parameter to be the output file of the server job
+## Output_File is the variable used by the PrintTask so it needs to be exact
+## Output_File is just a file name. AGS adds a proper URL path before returning its value
 Output_File = outFileName
 arcpy.SetParameterAsText(6, Output_File)
 
