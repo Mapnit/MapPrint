@@ -2,9 +2,7 @@ import sys, os, uuid
 import arcpy
 
 # Config for Map Print
-templateFolder = 'C:/Users/kdb086/Projects/MapPrint/APC TEMPLATES/'
-exportFolder = 'C:/Users/kdb086/Projects/MapPrint/Map_Export/'
-exportUrlRoot = 'http://someserver/map_export/'
+templateFolder = 'c:\\PrintTool\\APC_TEMPLATES'
 
 # Input for Map Print
 Web_Map_as_JSON = arcpy.GetParameterAsText(0)
@@ -14,9 +12,11 @@ orientation = arcpy.GetParameterAsText(3)
 format = arcpy.GetParameterAsText(4)
 dpi_as_text = arcpy.GetParameterAsText(5)
 
+arcpy.AddMessage("parameter Layout_Template: ")
+
 # Retrieve the template file
 tmplMxdName = size + "_" + orientation
-tmplMxdPath = templateFolder + tmplMxdName + ".mxd"
+tmplMxdPath = os.path.join(templateFolder, tmplMxdName + ".mxd")
 if not os.path.exists(tmplMxdPath):
 	arcpy.AddError("no such map template: %s"%tmplMxdPath)
 	sys.exit()
@@ -40,7 +40,7 @@ else:
 
 # Set Output FileName
 outFileName = "mapPrint_%s.%s"%(str(uuid.uuid1()), format)
-outFilePath = exportFolder + outFileName
+outFilePath = os.path.join(arcpy.env.scratchFolder, outFileName)
 
 # Convert the web map to a map document
 arcpy.AddMessage("Converting to a MapDocument...")
@@ -65,8 +65,8 @@ else:
 	sys.exit()
 
 # Set the output parameter to be the output file of the server job
-outFileUrl = exportUrlRoot + outFileName
-arcpy.SetParameterAsText(6, outFileUrl)
+Output_File = outFileName
+arcpy.SetParameterAsText(6, Output_File)
 
 arcpy.AddMessage("Print Completed")
 
