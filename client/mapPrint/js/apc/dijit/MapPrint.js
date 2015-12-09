@@ -79,6 +79,7 @@ define([
             // mix in settings and defaults
             declare.safeMixin(this.options, options);
             // properties
+			this.set("printServiceUrl", this.options.printServiceUrl); 
             this.set("map", this.options.map);
             this.set("title", this.options.title);
             this.set("sizeOptions", this.options.sizeOptions); 
@@ -176,7 +177,7 @@ define([
 			console.log("Gather the input");
 			// - size
 			var selectedSize = this._sizeComboBox.value; 
-			console.log("size = " + selectedSize);
+			console.log("size = " + selectedSize);			
 			// - orientation
 			var selectedOrientation = this._orientationComboBox.value; 
 			console.log("orientation = " + selectedOrientation);
