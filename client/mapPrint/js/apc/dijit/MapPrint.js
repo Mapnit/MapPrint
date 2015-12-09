@@ -262,10 +262,10 @@ define([
 			this.showMessage("Failed to Print:" + errMsg);
 		},
 		
-		_openPrintOut: function(data) {
-			console.log("PrintOut ready: " + data["Url"]);
-			window.open(data["Url"]); 
-			this.showMessage("");
+		_printComplete: function(result) {
+			console.log("PrintOut ready: " + result["url"]);
+			window.open(result["url"]); 
+			this.showMessage("Map PrintOut ready");
 		}
 
         /* ---------------------- */
