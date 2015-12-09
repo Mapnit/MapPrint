@@ -48,12 +48,12 @@ define([
             title: "Map Print", // widget title
 			username: "iMap_test@anadarko.com", 
 			sizeOptions: [
-				{name: "8.5x11", value: [8.5, 11]},
-				{name: "8.5x14", value: [8.5, 14]},
-				{name: "11x17", value: [11, 17]},
-				{name: "17x22", value: [17, 22]},
-				{name: "22x34", value: [22, 34]},
-				{name: "34x44", value: [34, 44]}
+				{name: "8.5x11", value: "8.5x11"},
+				{name: "8.5x14", value: "8.5x14"},
+				{name: "11x17", value: "11x17"},
+				{name: "17x22", value: "17x22"},
+				{name: "22x34", value: "22x34"},
+				{name: "34x44", value: "34x44"}
 			], 
 			orientationOptions: [
 				{name: "Portrait", value: "Portrait"}, 
