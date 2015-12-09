@@ -44,18 +44,17 @@ define([
 
         options: {
             map: null, // required
-            title: "Map Print",
 			sizeOptions: [
 				{name: "8.5x11", value: [8.5, 11]},
 				{name: "8.5x14", value: [8.5, 14]},
-				{name: "11x14", value: [11, 14]},
+				{name: "11x17", value: [11, 17]},
 				{name: "17x22", value: [17, 22]},
 				{name: "22x34", value: [22, 34]},
 				{name: "34x44", value: [34, 44]}
 			], 
 			orientationOptions: [
-				{name: "Portrait", value: "portrait"}, 
-				{name: "Landscape", value: "landscape"}
+				{name: "Portrait", value: "Portrait"}, 
+				{name: "Landscape", value: "Landscape"}
 			], 
 			formatOptions: [
 				{name: "PDF", value: "pdf"},
