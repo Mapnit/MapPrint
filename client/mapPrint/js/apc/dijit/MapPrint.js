@@ -227,6 +227,9 @@ define([
 			var printParams = new PrintParameters();
 			printParams.map = params.map; 
 			
+			/*
+			// Commented out the PrintTemplate. 
+			// Use extraParameters to pass the template params
 			printParams.template = new PrintTemplate(); 
 			printParams.template.layoutOptions = {
 				titleText: params.titleInput, 
@@ -238,6 +241,15 @@ define([
 				dpi: params.dpi
 			}
 			printParams.template.format = params.format;
+			 */
+			
+			printParams.extraParameters = {
+				title : params.titleInput, 
+				size: params.size,
+				orientation: params.orientation, 
+				format: params.format, 
+				dpi_as_text: params.dpi 
+			};
 
 			// execute the print task
 			var printTask = new PrintTask(this.printServiceUrl, {
