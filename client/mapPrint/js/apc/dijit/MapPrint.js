@@ -18,6 +18,10 @@ define([
 	
 	"dojo/store/Memory",
 	"dijit/form/FilteringSelect", 
+	
+	"esri/tasks/PrintTask", 
+	"esri/tasks/PrintParameters", 
+	"esri/tasks/PrintTemplate",
 
     "dojo/text!./templates/MapPrint.html", // template html
 	
@@ -28,6 +32,7 @@ define([
     parser, _TemplatedMixin, _WidgetsInTemplateMixin,
     on, dom, domConstruct, domClass, domStyle, ready, 
 	Memory, FilteringSelect,  
+	PrintTask, PrintParameters, PrintTemplate,  
     dijitTemplate
 ) {
 
