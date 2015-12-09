@@ -5,7 +5,7 @@ import sys, os, arcpy
 
 # Esri start of added variables
 g_ESRI_variable_1 = os.path.join(arcpy.env.packageWorkspace,u'apc_templates')
-g_ESRI_variable_2 = os.path.join(arcpy.env.packageWorkspace,u'map_export')
+#g_ESRI_variable_2 = os.path.join(arcpy.env.packageWorkspace,u'map_export')
 # Esri end of added variables
 
 import sys, os, uuid
@@ -13,7 +13,7 @@ import arcpy
 
 # Config for Map Print
 templateFolder = g_ESRI_variable_1
-exportFolder = g_ESRI_variable_2
+#exportFolder = g_ESRI_variable_2
 
 # Input for Map Print
 Web_Map_as_JSON = arcpy.GetParameterAsText(0)
