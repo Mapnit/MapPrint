@@ -5,30 +5,35 @@ import sys, os, arcpy
 
 # Esri start of added variables
 g_ESRI_variable_1 = os.path.join(arcpy.env.packageWorkspace,u'apc_templates')
-#g_ESRI_variable_2 = os.path.join(arcpy.env.packageWorkspace,u'map_export')
 # Esri end of added variables
 
-import sys, os, uuid
+import sys, os, uuid, logging
 import arcpy
 
 # Config for Map Print
 templateFolder = g_ESRI_variable_1
-#exportFolder = g_ESRI_variable_2
+
+# logging 
+FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
+logging.basicConfig(filename=r'\\anadarko.com\world\AppsData\Houston\iMaps\Server\directories\arcgisoutput\Test\PrintTool_GPServer\Test_PrintTool\MapPrint_gp.log', level=logging.DEBUG, format='%(asctime)s %(message)s')
 
 # Input for Map Print
-## Web_Map_as_JSON is the variable used by the PrintTask so it needs to be exact
 Web_Map_as_JSON = arcpy.GetParameterAsText(0)
-## Other params are additional so they needs to match the input params in the tool properties
 title = arcpy.GetParameterAsText(1)
+logging.info("title: " + title)
 size = arcpy.GetParameterAsText(2)
+logging.info("size: " + size)
 orientation = arcpy.GetParameterAsText(3)
+logging.info("orientation: " + orientation)
 format = arcpy.GetParameterAsText(4)
+logging.info("format: " + format)
 dpi_as_text = arcpy.GetParameterAsText(5)
-
-arcpy.AddMessage("parameter Layout_Template: ")
+logging.info("dpi_as_text: " + dpi_as_text)
 
 # Retrieve the template file
 tmplMxdName = size + "_" + orientation
+logging.info("tmplMxdName: " + tmplMxdName)
+
 tmplMxdPath = os.path.join(templateFolder, tmplMxdName + ".mxd")
 if not os.path.exists(tmplMxdPath):
 	arcpy.AddError("no such map template: %s"%tmplMxdPath)
@@ -50,6 +55,9 @@ elif orientation == "Landscape":
 else:
 	arcpy.AddError("invalid map orientation: %s"%orientation)
 	sys.exit()
+
+logging.info("width: " + str(width))
+logging.info("height: " + str(height))
 
 # Set Output FileName
 outFileName = "mapPrint_%s.%s"%(str(uuid.uuid1()), format)
@@ -78,9 +86,8 @@ else:
 	sys.exit()
 
 # Set the output parameter to be the output file of the server job
-## Output_File is the variable used by the PrintTask so it needs to be exact
-## Output_File is just a file name. AGS adds a proper URL path before returning its value
 Output_File = outFileName
+logging.info("outFileName: " + outFileName)
 arcpy.SetParameterAsText(6, Output_File)
 
 arcpy.AddMessage("Print Completed")
