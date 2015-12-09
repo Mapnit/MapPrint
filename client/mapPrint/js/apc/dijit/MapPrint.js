@@ -44,6 +44,9 @@ define([
 
         options: {
             map: null, // required
+			printServiceUrl: "", // required
+            title: "Map Print", // widget title
+			username: "iMap_test@anadarko.com", 
 			sizeOptions: [
 				{name: "8.5x11", value: [8.5, 11]},
 				{name: "8.5x14", value: [8.5, 14]},
@@ -195,6 +198,62 @@ define([
 			var titleInput = this._titleInput.value; 
 			console.log("title = " + titleInput);
 			
+			var printParams = {
+				map: this.map, 
+				title: titleInput, 
+				username: this.username, 
+				size: selectedSize, 
+				orientation: selectedOrientation, 
+				format: selectedFormat, 
+				dpi: selectedDpi
+			};
+			
+			this.showMessage("printing map ... ");
+			
+			this._printByPrintTask(printParams); 
+		}, 
+		
+		_printByPrintTask: function(params) {
+			// calculate the print dimension
+			var printWidth = params.size[0] * params.dpi, 
+				printHeight = params.size[1] * params.dpi; 
+			if (params.orientation === "Landscape") {
+				var swap = printWidth;
+				printWidth = printHeight;
+				printHeight = swap; 
+			}
+
+			// construct the print parameter
+			var printParams = new PrintParameters();
+			printParams.map = params.map; 
+			
+			printParams.template = new PrintTemplate(); 
+			printParams.template.layoutOptions = {
+				titleText: params.titleInput, 
+				authorText: params.username
+			};
+			printParams.template.exportOptions = {
+				width: printWidth,
+				height: printHeight,
+				dpi: params.dpi
+			}
+			printParams.template.format = params.format;
+
+			// execute the print task
+			var printTask = new PrintTask(this.printServiceUrl, {
+				async : true
+			});	
+
+			printTask.execute(printParams, lang.hitch(this, function(result) {
+				this._printComplete(result); 
+			}), lang.hitch(this, function(err) {
+				this._printFailed(err); 
+			}));
+		}, 
+		
+		_printStatus: function(status) {
+			console.log("print status: " + status); 
+			this.showMessage(status);
 		}, 
 		
 		_printFailed: function(err){
@@ -212,7 +271,6 @@ define([
         /* ---------------------- */
         /* Private Event Handlers */
         /* ---------------------- */
-		
 
     });
 
