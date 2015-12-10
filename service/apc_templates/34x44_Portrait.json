@@ -1,0 +1,81 @@
+﻿{
+  "$type": "Anadarko.iMaps.DataTransfer.DTOTemplateDescription, Anadarko.iMaps.DataTransfer",
+  "Filepath": null,
+  "Width": 34.0,
+  "Height": 44.0,
+  "Legends": [
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTOLegendDescription, Anadarko.iMaps.DataTransfer",
+      "PageExtent": {
+        "$type": "Anadarko.iMaps.DataTransfer.DTOEnvelope, Anadarko.iMaps.DataTransfer",
+        "XMin": 0.89420000000063737,
+        "YMin": 1.0,
+        "XMax": 2.4737999999997555,
+        "YMax": 1.496499999999287
+      },
+      "Title": "Legend"
+    }
+  ],
+  "TextElements": [
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "dateQuikMap",
+      "Text": "<DATETIME>"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "GraphicText1",
+      "Text": "Author:"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "GraphicText2",
+      "Text": "Date:"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "GraphicText3",
+      "Text": "Projection:"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "GraphicText7",
+      "Text": "Scale:"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "prjQuikMap",
+      "Text": "<PROJECTION>"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "ttl1QuikMap",
+      "Text": "<TITLE1>"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "ttl2QuikMap",
+      "Text": "<TITLE3>"
+    }
+  ],
+  "MapFrames": [
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTOMapFrameDescription, Anadarko.iMaps.DataTransfer",
+      "PageExtent": {
+        "$type": "Anadarko.iMaps.DataTransfer.DTOEnvelope, Anadarko.iMaps.DataTransfer",
+        "XMin": 0.6000000000003638,
+        "YMin": 0.6000000000003638,
+        "XMax": 33.399999999999636,
+        "YMax": 43.399999999999636
+      },
+      "MapExtent": {
+        "$type": "Anadarko.iMaps.DataTransfer.DTOEnvelope, Anadarko.iMaps.DataTransfer",
+        "XMin": -121.59672967314137,
+        "YMin": 42.536325993686667,
+        "XMax": -121.50679563392953,
+        "YMax": 42.653678947292356
+      },
+      "Name": "P34X44"
+    }
+  ]
+}

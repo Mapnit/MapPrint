@@ -1,0 +1,76 @@
+﻿{
+  "$type": "Anadarko.iMaps.DataTransfer.DTOTemplateDescription, Anadarko.iMaps.DataTransfer",
+  "Filepath": null,
+  "Width": 8.5,
+  "Height": 11.0,
+  "Legends": [
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTOLegendDescription, Anadarko.iMaps.DataTransfer",
+      "PageExtent": {
+        "$type": "Anadarko.iMaps.DataTransfer.DTOEnvelope, Anadarko.iMaps.DataTransfer",
+        "XMin": 0.58400000000074215,
+        "YMin": 0.58400000000074215,
+        "XMax": 1.1766999999999825,
+        "YMax": 0.7702000000008411
+      },
+      "Title": "Legend"
+    }
+  ],
+  "TextElements": [
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "dateQuikMap",
+      "Text": "<DATETIME>"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "GraphicText1",
+      "Text": "Scale:"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "GraphicText2",
+      "Text": "Author:"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "GraphicText6",
+      "Text": "Date:"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "prjQuikMap",
+      "Text": "<PROJECTION>"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "ttl1QuikMap",
+      "Text": "<TITLE1>"
+    },
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTONamedTextElementDescription, Anadarko.iMaps.DataTransfer",
+      "Name": "ttl2QuikMap",
+      "Text": "<TITLE3>"
+    }
+  ],
+  "MapFrames": [
+    {
+      "$type": "Anadarko.iMaps.DataTransfer.DTOMapFrameDescription, Anadarko.iMaps.DataTransfer",
+      "PageExtent": {
+        "$type": "Anadarko.iMaps.DataTransfer.DTOEnvelope, Anadarko.iMaps.DataTransfer",
+        "XMin": 0.5,
+        "YMin": 0.5,
+        "XMax": 8.0,
+        "YMax": 10.5
+      },
+      "MapExtent": {
+        "$type": "Anadarko.iMaps.DataTransfer.DTOEnvelope, Anadarko.iMaps.DataTransfer",
+        "XMin": -122.60387174577733,
+        "YMin": 45.148889584124809,
+        "XMax": -122.5832141090012,
+        "YMax": 45.176433099826291
+      },
+      "Name": "P8_5X11"
+    }
+  ]
+}
