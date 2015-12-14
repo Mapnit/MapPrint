@@ -7,7 +7,7 @@ import sys, os, arcpy
 g_ESRI_variable_1 = os.path.join(arcpy.env.packageWorkspace,u'apc_templates')
 # Esri end of added variables
 
-import sys, os, uuid, logging
+import sys, os, uuid, logging, json
 import arcpy
 
 # Config for Map Print
@@ -19,6 +19,26 @@ logging.basicConfig(filename=r'\\anadarko.com\world\AppsData\Houston\iMaps\Serve
 
 # Input for Map Print
 Web_Map_as_JSON = arcpy.GetParameterAsText(0)
+logging.info("Web_Map_as_JSON: " + Web_Map_as_JSON)
+
+webMap = json.loads(Web_Map_as_JSON)
+# scan for token
+token = None
+for lyr in webMap["operationalLayers"]:
+    if "url" in lyr:
+        if lyr["url"].startswith("https://portalqa.anadarko.com/") == True:
+            if "token" in lyr:
+                token = lyr["token"]
+# populate token for other ags layers
+if token is not None:
+    for lyr in webMap["operationalLayers"]:
+        if "url" in lyr:
+            if lyr["url"].startswith("https://portalqa.anadarko.com/") == True:
+                if "token" not in lyr:
+                    lyr["token"] = token
+Web_Map_as_JSON = json.dumps(webMap)
+
+# additional parameters
 title = arcpy.GetParameterAsText(1)
 logging.info("title: " + title)
 size = arcpy.GetParameterAsText(2)
